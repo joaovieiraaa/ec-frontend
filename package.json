@@ -1,0 +1,40 @@
+{
+  "name": "ec-frontend",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "lint": "vue-cli-service lint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
+    "dev": "vite --port 8089",
+    "dev-host": "vite --port 8089",
+    "dev-port": "vite --host express-web-dev.jimpisoft.pt --port 7741",
+    "build": "npm run lint && vite build",
+    "preview": "vite preview --port"
+  },
+  "dependencies": {
+    "@intlify/unplugin-vue-i18n": "^4.0.0",
+    "@vitejs/plugin-vue": "^5.0.4",
+    "core-js": "^3.36.1",
+    "pinia": "^2.1.7",
+    "vue": "^3.4.21",
+    "vue-i18n": "^9.11.1",
+    "vue-router": "^4.3.0"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-eslint": "^5.0.8",
+    "@vue/cli-service": "^5.0.8",
+    "eslint": "^9.0.0",
+    "eslint-plugin-vue": "^9.24.1",
+    "sass": "^1.74.1",
+    "terser": "^5.30.3",
+    "typescript": "^5.4.5",
+    "vite": "^5.2.8"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead",
+    "not ie 11"
+  ]
+}
