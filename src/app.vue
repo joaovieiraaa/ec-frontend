@@ -5,11 +5,14 @@ import { appStore } from "@/stores/app";
 import { storeToRefs } from "pinia";
 import { computed, defineAsyncComponent } from "vue";
 
-const { theme } = storeToRefs(appStore());
+const { storeName, routeView } = storeToRefs(appStore());
 
-const currentTheme = computed(() => {
+const currentView = computed(() => {
   return defineAsyncComponent(
-    () => import(`@/layouts/${theme.value}/${theme.value}.vue`)
+    () =>
+      import(
+        `@/templates/${storeName.value}/${routeView.value}/${routeView.value}.vue`
+      )
   );
 });
 </script>

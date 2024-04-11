@@ -7,6 +7,8 @@ export const appStore = defineStore({
     router: null,
     layouts: [],
     theme: "layout-one",
+    storeName: "store-one",
+    routeView: "index",
   }),
   getters: {},
   actions: {},

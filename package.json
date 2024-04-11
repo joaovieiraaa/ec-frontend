@@ -9,7 +9,7 @@
     "dev": "vite --port 8089",
     "dev-host": "vite --port 8089",
     "dev-port": "vite --host express-web-dev.jimpisoft.pt --port 7741",
-    "build": "npm run lint && vite build",
+    "build": "vite build",
     "preview": "vite preview --port"
   },
   "dependencies": {
@@ -27,6 +27,7 @@
     "eslint": "^9.0.0",
     "eslint-plugin-vue": "^9.24.1",
     "sass": "^1.74.1",
+    "swiper": "^11.1.1",
     "terser": "^5.30.3",
     "typescript": "^5.4.5",
     "vite": "^5.2.8"

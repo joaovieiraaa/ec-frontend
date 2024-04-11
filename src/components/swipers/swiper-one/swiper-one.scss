@@ -1,0 +1,25 @@
+.intro-slide {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  background-size: cover;
+  background-position: center center;
+  .intro-content {
+    position: static;
+    left: auto;
+    top: auto;
+    transform: translateY(0);
+    -ms-transform: translateY(0);
+  }
+}
+
+.intro-slider-container {
+  height: 100vh;
+  position: relative;
+
+  &:before {
+    content: "";
+    display: block;
+    width: 100%;
+  }
+}

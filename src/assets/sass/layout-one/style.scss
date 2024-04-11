@@ -13224,12 +13224,7 @@ blockquote.text-white {
     flex: 0 0 80.8%;
     max-width: 80.8%;
   }
-  .intro-slider-container {
-    height: unset;
-  }
-  .intro-slide {
-    height: unset;
-  }
+
   .carousel-dot {
     img {
       transition: all 0.3s;
@@ -17147,47 +17142,13 @@ small.form-text {
 .text-darkwhite {
   color: $color_25;
 }
-.intro-slider-container {
-  background-color: $background-color_50;
-  position: relative;
-  &:before {
-    display: block;
-    content: "";
-    width: 100%;
-  }
-}
-.intro-slide {
-  background-color: $background-color_50;
-  .slide-image {
-    position: relative;
-    &:before {
-      display: block;
-      content: "";
-      width: 100%;
-    }
-  }
-}
+
 .slider-container-1 {
   &:before {
     padding-top: 56.5384615385%;
   }
 }
-.intro-slider-1 {
-  .slide-image {
-    &:before {
-      padding-top: 56.5384615385%;
-    }
-  }
-}
-.slider-container-ratio {
-  .intro-slider {
-    position: absolute;
-    left: 0;
-    top: 0;
-    z-index: 2;
-    width: 100%;
-  }
-}
+
 .slide-image {
   > picture {
     position: absolute;
@@ -24946,13 +24907,6 @@ button {
   .slider-container-1 {
     &:before {
       padding-top: 83.3333333333%;
-    }
-  }
-  .intro-slider-1 {
-    .slide-image {
-      &:before {
-        padding-top: 83.3333333333%;
-      }
     }
   }
 }

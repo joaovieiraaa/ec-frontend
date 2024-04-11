@@ -23,25 +23,7 @@ $border-color_1: #cc9966;
     margin-bottom: 0.7rem;
   }
 }
-.intro-slider-container {
-  height: 100vh;
-  background-color: $background-color_2;
-}
-.intro-slide {
-  height: 100vh;
-  background-color: $background-color_2;
-  display: flex;
-  align-items: center;
-  background-size: cover;
-  background-position: center center;
-  .intro-content {
-    position: static;
-    left: auto;
-    top: auto;
-    transform: translateY(0);
-    -ms-transform: translateY(0);
-  }
-}
+
 .intro-subtitle {
   font-weight: 400;
   font-size: 1.2rem;

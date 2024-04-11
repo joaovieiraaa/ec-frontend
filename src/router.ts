@@ -16,7 +16,7 @@ const router = createRouter({
       path: "/",
       name: "index",
       component: null,
-      meta: { safe: false },
+      meta: { safe: false, view: "index" },
     },
   ],
 });
@@ -28,7 +28,9 @@ const safeRoutes = routes
 
 router.beforeEach(async (to: any) => {
   const store = appStore();
-  const { init } = storeToRefs(store);
+  const { routeView } = storeToRefs(store);
+
+  routeView.value = to.meta.view ?? "index";
 
   // if (!init.value) store.layouts();
 
