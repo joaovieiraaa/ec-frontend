@@ -15882,49 +15882,6 @@ blockquote.text-white {
   font-weight: 400;
   display: inline-block;
 }
-.banner-display {
-  > a {
-    &:before {
-      content: "";
-      display: block;
-      position: absolute;
-      left: 0;
-      right: 0;
-      top: 0;
-      bottom: 0;
-      z-index: 1;
-      opacity: 0;
-      visibility: hidden;
-      background-color: $background-color_35;
-      transition: all 0.35s ease;
-    }
-  }
-  &:hover {
-    > a {
-      &:before {
-        visibility: visible;
-        opacity: 1;
-      }
-    }
-  }
-  .banner-content {
-    padding-top: 0;
-  }
-  .banner-title {
-    font-weight: 600;
-    font-size: 2rem;
-  }
-}
-.banner-display.banner-link-anim {
-  .banner-title {
-    margin-bottom: 0;
-  }
-  &:hover {
-    .banner-content {
-      padding-bottom: 4.5rem;
-    }
-  }
-}
 .btn.banner-link {
   font-size: 1.4rem;
   line-height: 1;
@@ -16149,50 +16106,7 @@ blockquote.text-white {
   left: auto;
   right: 30px;
 }
-.banner-link-anim {
-  .banner-content {
-    transition: all 0.3s ease;
-  }
-  .banner-subtitle {
-    margin-bottom: 0;
-  }
-  .banner-link {
-    opacity: 0;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    min-width: 130px;
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-    transition: all 0.3s ease;
-    transform: translateY(-20px);
-    -ms-transform: translateY(-20px);
-  }
-  .banner-content-center {
-    .banner-link {
-      left: 50%;
-      transform: translateY(-20px) translateX(-50%);
-      -ms-transform: translateY(-20px) translateX(-50%);
-    }
-  }
-  &:hover {
-    .banner-content {
-      padding-bottom: 4rem;
-    }
-    .banner-link {
-      opacity: 1;
-      transform: translateY(0);
-      -ms-transform: translateY(0);
-    }
-    .banner-content-center {
-      .banner-link {
-        transform: translateY(0) translateX(-50%);
-        -ms-transform: translateY(0) translateX(-50%);
-      }
-    }
-  }
-  background-color: $background-color_13;
-}
+
 .social-icons {
   display: flex;
   align-items: center;
@@ -22401,12 +22315,6 @@ button {
       font-size: 4rem;
     }
   }
-  .banner-display {
-    .banner-title {
-      font-size: 2.4rem;
-      font-size: 1.8rem;
-    }
-  }
   .video-banner-bg {
     padding-top: 14.5rem;
     padding-bottom: 13.5rem;
@@ -22993,10 +22901,6 @@ button {
     }
   }
   .banners-sm {
-    .banner-link-anim {
-      padding-left: 0;
-      padding-right: 0;
-    }
     .row {
       margin-left: 0;
       margin-right: 0;

@@ -1,0 +1,115 @@
+.banner-display {
+  .banner-title {
+    font-weight: 600;
+    font-size: 1.6rem;
+    letter-spacing: -0.025em;
+
+    &.banner-title-hidden {
+      visibility: hidden;
+      transition: visibility 0.3s;
+    }
+  }
+
+  .banner-subtitle {
+    font-weight: 300;
+    font-size: 1.4rem;
+    letter-spacing: 0;
+    margin-bottom: 0.5rem;
+    margin-top: 0;
+  }
+
+  .btn.banner-link {
+    text-transform: none;
+    min-width: 126px;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    transform: translateY(-20px);
+    opacity: 0;
+
+    &.banner-link-anim {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      min-width: 130px;
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
+    }
+  }
+
+  > a:before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.35s ease, visibility 0.35s ease;
+  }
+
+  &:hover {
+    > a:before {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    &.banner-link-anim {
+      .banner-content {
+        padding-bottom: 4rem;
+      }
+      .banner-link {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  }
+
+  .banner-content {
+    padding-top: 0;
+    transition: padding-bottom 0.3s ease;
+  }
+
+  &.banner-link-anim {
+    .banner-title {
+      margin-bottom: 0;
+    }
+
+    &:hover {
+      .banner-content {
+        padding-bottom: 4.5rem;
+      }
+      .banner-content-center .banner-link {
+        transform: translateY(0) translateX(-50%);
+      }
+    }
+
+    .banner-subtitle {
+      margin-bottom: 0;
+    }
+
+    .banner-content-center {
+      .banner-link {
+        left: 50%;
+        transform: translateY(-20px) translateX(-50%);
+      }
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    .banner-title {
+      font-size: 1.8rem;
+    }
+  }
+}
+
+.banner-title-hidden .banner-title {
+  visibility: hidden;
+  transition: visibility 0.3s;
+}
+
+.banner-title-hidden:hover .banner-title,
+.banner-title-hidden:focus .banner-title {
+  visibility: visible;
+}
