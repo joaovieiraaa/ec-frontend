@@ -4,8 +4,8 @@
       <h2 class="title">Recent Arrivals</h2>
       <p class="title-desc">Aliquam tincidunt mauris eurisus</p>
     </div>
-    {{ componentId}}
-    <div class="owl-carousel owl-simple" :id="componentId">
+
+    <div class="position-relative" :id="componentId">
       <div class="swiper-wrapper">
         <div class="product product-4 swiper-slide">
           <figure class="product-media">
@@ -232,6 +232,7 @@
             <div class="product-price">$350.00</div>
           </div>
         </div>
+
         <div class="product product-4 swiper-slide">
           <figure class="product-media">
             <a href="product.html">
@@ -283,56 +284,9 @@
             <div class="product-price">$370.00</div>
           </div>
         </div>
-        <figure class="product-media">
-          <span class="product-label label-new">New</span>
-          <a href="product.html">
-            <img
-              src="/images/demos/demo-12/products/product-6.jpg"
-              alt="Product image"
-              class="product-image"
-            />
-            <img
-              src="/images/demos/demo-12/products/product-6-2.jpg"
-              alt="Product image"
-              class="product-image-hover"
-            />
-          </a>
-
-          <div class="product-action-vertical">
-            <a href="#" class="btn-product-icon btn-wishlist btn-expandable"
-              ><span>add to wishlist</span></a
-            >
-            <a
-              href="popup/quickView.html"
-              class="btn-product-icon btn-quickview"
-              title="Quick view"
-              ><span>Quick view</span></a
-            >
-            <a href="#" class="btn-product-icon btn-compare" title="Compare"
-              ><span>Compare</span></a
-            >
-          </div>
-          <!-- End .product-action -->
-
-          <div class="product-action">
-            <a href="#" class="btn-product btn-cart"
-              ><span>add to cart</span></a
-            >
-          </div>
-          <!-- End .product-action -->
-        </figure>
-        <!-- End .product-media -->
-
-        <div class="product-body">
-          <div class="product-cat">
-            <a href="#">Sandals</a>
-          </div>
-          <h3 class="product-title">
-            <a href="product.html">Spring Sandals</a>
-          </h3>
-          <div class="product-price">$59.00</div>
-        </div>
       </div>
+
+      <div class="swiper-scrollbar"></div>
     </div>
   </div>
 </div>

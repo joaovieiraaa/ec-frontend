@@ -35,5 +35,61 @@ onMounted(() => {
   searchWrapper.addEventListener("click", (e: any) => {
     e.stopPropagation();
   });
+
+  mobileMenu();
 });
+function mobileMenu(): void {
+  const mobileMenuToggler = document.querySelector(".mobile-menu-toggler");
+  const mobileMenuOverlayClose = document.querySelectorAll(
+    ".mobile-menu-overlay, .mobile-menu-close"
+  );
+  const menuToggler = document.querySelector(".menu-toggler");
+
+  mobileMenuToggler.addEventListener("click", function (e) {
+    document.body.classList.toggle("mmenu-active");
+    this.classList.toggle("active");
+    e.preventDefault();
+  });
+
+  mobileMenuOverlayClose.forEach(function (element) {
+    element.addEventListener("click", function (e) {
+      document.body.classList.remove("mmenu-active");
+      if (menuToggler) {
+        menuToggler.classList.remove("active");
+      }
+      e.preventDefault();
+    });
+  });
+
+  // Add Mobile menu icon arrows to items with children
+  document.querySelectorAll(".mobile-menu li").forEach(function (item) {
+    if (item.querySelector("ul")) {
+      const mmenuBtn = document.createElement("span");
+      mmenuBtn.classList.add("mmenu-btn");
+      item.querySelector("a").appendChild(mmenuBtn);
+    }
+  });
+
+  // Mobile Menu toggle children menu (using event delegation)
+  document
+    .querySelector(".mobile-menu")
+    .addEventListener("click", function (e) {
+      const target = e.target as HTMLElement;
+      if (target.classList.contains("mmenu-btn")) {
+        const parent = target.closest("li");
+        const targetUl = parent.querySelector("ul");
+
+        if (targetUl && !parent.classList.contains("open")) {
+          targetUl.style.display = "block";
+          parent.classList.add("open");
+        } else if (targetUl && parent.classList.contains("open")) {
+          targetUl.style.display = "none";
+          parent.classList.remove("open");
+        }
+
+        e.stopPropagation();
+        e.preventDefault();
+      }
+    });
+}
 </script>

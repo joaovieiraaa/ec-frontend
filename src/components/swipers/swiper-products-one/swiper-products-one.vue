@@ -4,29 +4,35 @@
 <script setup lang="ts">
 import { onMounted, ref } from "vue";
 import Swiper from "swiper";
-import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import { Scrollbar } from "swiper/modules";
 import { randomString } from "@/utils/helpers";
 
+// import Swiper and modules styles
+import "swiper/css";
+import "swiper/css/scrollbar";
+
 const componentId = ref<string>(`c-${randomString()}`);
+const swiper = ref<HTMLElement>(null);
 
 onMounted(() => {
-  console.log("moutend");
-  new Swiper(`#${componentId.value}`, {
-    modules: [Pagination],
+  swiper.value = document.querySelector(`#${componentId.value}`);
+
+  new Swiper(swiper.value, {
+    modules: [Scrollbar],
     loop: true,
-    slidesPerView: 4,
+    direction: "horizontal",
+    scrollbar: {
+      el: ".swiper-scrollbar",
+    },
     breakpoints: {
-      // when window width is >= 320px
       320: {
         slidesPerView: 2,
         spaceBetween: 20,
       },
-      // when window width is >= 480px
       480: {
         slidesPerView: 3,
         spaceBetween: 30,
       },
-      // when window width is >= 640px
       640: {
         slidesPerView: 4,
         spaceBetween: 40,

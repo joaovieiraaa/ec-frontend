@@ -177,16 +177,7 @@ $border-color_1: #cc9966;
     letter-spacing: -0.01em;
   }
 }
-.footer-menu {
-  a {
-    &:hover {
-      box-shadow: 0 1px 0 #cc9966;
-    }
-    &:focus {
-      box-shadow: 0 1px 0 #cc9966;
-    }
-  }
-}
+
 @media screen and (min-width: 768px) {
   .intro-subtitle {
     font-size: 1.4rem;

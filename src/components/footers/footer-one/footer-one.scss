@@ -1,0 +1,68 @@
+.footer-one {
+  a {
+    &:hover {
+      //   color: $color_23;
+      //   color: $color_23;
+      //   color: $color_23;
+    }
+    &:focus {
+      //   color: $color_23;
+      //   color: $color_23;
+      //   color: $color_23;
+    }
+    // color: $color_11;
+  }
+  width: 100%;
+  font-weight: 300;
+  font-size: 1.4rem;
+  //   color: $color_9;
+  //   background-color: $background-color_1;
+  .widget {
+    margin-bottom: 4rem;
+  }
+  .widget-title {
+    // color: $color_3;
+    font-size: 1.6rem;
+    letter-spacing: -0.01em;
+    margin-top: 0;
+    margin-bottom: 1.9rem;
+    font-weight: 600;
+  }
+}
+
+// .footer-2 {
+//   .footer-menu {
+//     a {
+//       &:hover {
+//         box-shadow: 0 1px 0 #cc9966;
+//       }
+//       &:focus {
+//         box-shadow: 0 1px 0 #cc9966;
+//       }
+//     }
+//   }
+
+//   .footer-middle {
+//     padding-top: 4.5rem;
+//     padding-bottom: 0.4rem;
+//   }
+//   .footer-bottom {
+//     .container {
+//       padding-top: 2.2rem;
+//       padding-bottom: 2.2rem;
+//       flex-direction: column-reverse;
+//     }
+//   }
+// }
+
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+  .footer-one {
+    .widget-about {
+      .social-icon {
+        &:not(:last-child) {
+          margin-right: 0.4rem;
+        }
+      }
+    }
+  }
+}

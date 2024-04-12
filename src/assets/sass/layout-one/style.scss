@@ -10652,55 +10652,7 @@ blockquote.text-white {
     margin-bottom: 0;
   }
 }
-.footer {
-  a {
-    &:hover {
-      color: $color_23;
-      color: $color_23;
-      color: $color_23;
-    }
-    &:focus {
-      color: $color_23;
-      color: $color_23;
-      color: $color_23;
-    }
-    color: $color_11;
-  }
-  width: 100%;
-  font-weight: 300;
-  font-size: 1.4rem;
-  color: $color_9;
-  background-color: $background-color_1;
-  .widget {
-    margin-bottom: 4rem;
-  }
-  .widget-title {
-    color: $color_3;
-    font-weight: 500;
-    font-size: 1.6rem;
-    letter-spacing: -0.01em;
-    margin-top: 0;
-    margin-bottom: 1.9rem;
-    font-weight: 600;
-  }
-}
-.footer-dark.footer-2 {
-  .widget-about-title {
-    color: $color_23;
-    color: $color_23;
-    color: $color_23;
-  }
-  .widget-about-info {
-    a {
-      &:not(:hover) {
-        color: $color_2;
-      }
-    }
-  }
-  .footer-bottom {
-    color: $color_13;
-  }
-}
+
 .account {
   a {
     &:hover {
@@ -13969,44 +13921,6 @@ blockquote.text-white {
   transform: translateY(0);
   -webkit-transform: translateY(0);
   -ms-transform: translateY(0);
-}
-.footer-dark {
-  background-color: $background-color_15;
-  .footer-middle {
-    border-top-width: 0;
-  }
-  .widget-title {
-    color: $color_2;
-  }
-  .social-icon {
-    &:hover {
-      color: $color_2;
-    }
-    &:focus {
-      color: $color_2;
-    }
-  }
-  .footer-bottom {
-    color: $color_1;
-    .container {
-      &:before {
-        background-color: $background-color_27;
-      }
-    }
-  }
-}
-.footer-2 {
-  .footer-middle {
-    padding-top: 4.5rem;
-    padding-bottom: 0.4rem;
-  }
-  .footer-bottom {
-    .container {
-      padding-top: 2.2rem;
-      padding-bottom: 2.2rem;
-      flex-direction: column-reverse;
-    }
-  }
 }
 .widget-about-info {
   font-weight: 400;
@@ -22789,16 +22703,7 @@ button {
   .footer-payments {
     margin-right: 0;
   }
-  .footer-2 {
-    .footer-bottom {
-      .container {
-        flex-direction: row;
-      }
-      .container-fluid {
-        flex-direction: row;
-      }
-    }
-  }
+
   .footer-menu {
     margin-bottom: 0;
     margin-left: 0.6rem;
@@ -24814,17 +24719,7 @@ button {
     }
   }
 }
-@media screen and (min-width: 992px) and (max-width: 1200px) {
-  .footer {
-    .widget-about {
-      .social-icon {
-        &:not(:last-child) {
-          margin-right: 0.4rem;
-        }
-      }
-    }
-  }
-}
+
 @media screen and (min-width: 480px) {
   .just-action-icons-sm {
     .btn-product {
