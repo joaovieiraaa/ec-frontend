@@ -1,267 +1,104 @@
-.header-9 {
+.navbar-one {
   position: absolute;
   left: 0;
   right: 0;
   top: 0;
   z-index: 1040;
-  //   background-color: $background-color_13;
+
   .header-middle {
     border-bottom: none;
   }
-  .cart-dropdown {
-    padding-left: 2.3rem;
-    &:not(:hover) {
-      &:not(.show) {
-        .dropdown-toggle {
-          //   color: $color_2;
-        }
-      }
-    }
-    .dropdown-menu {
-      margin-top: 0;
-    }
-  }
-  .compare-dropdown {
-    padding-left: 2.3rem;
-    &:not(:hover) {
-      &:not(.show) {
-        .dropdown-toggle {
-          //   color: $color_2;
-        }
-      }
-    }
-    .dropdown-menu {
-      margin-top: 0;
-    }
-  }
-  .header-search {
-    .header-search-wrapper {
-      //   border-color: $border-color_11;
-    }
-  }
-  .wishlist-link {
-    &:not(:hover) {
-      &:not(:focus) {
-        // color: $color_2;
-        // color: $color_2;
-      }
-    }
-  }
-  .search-toggle {
-    &:not(:hover) {
-      &:not(:focus) {
-        &:not(.active) {
-          //   color: $color_2;
-        }
-      }
-    }
-  }
-  .mobile-menu-toggler {
-    // color: $color_2;
-    // color: $color_2;
-  }
-  .menu {
-    > li {
-      &:not(:hover) {
-        &:not(.active) {
-          &:not(.show) {
-            > a {
-              //   color: $color_2;
-            }
-          }
-        }
-      }
-      > a {
-        padding-top: 2.85rem;
-        padding-bottom: 2.85rem;
-      }
-    }
-    ul {
-      margin-top: 0;
-    }
-    .megamenu {
-      margin-top: 0;
-    }
-  }
+
   .logo {
     margin-top: 2.5rem;
     margin-bottom: 2.5rem;
+
+    @media screen and (max-width: 575px) {
+      margin-top: 1.5rem;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+    }
   }
+
   .main-nav {
     margin-left: 1rem;
-  }
-  .sticky-header.fixed {
-    // background-color: $background-color_9;
-  }
-}
 
-.header.header-9 {
+    @media screen and (min-width: 576px) {
+      margin-right: 10rem;
+      margin-left: 0;
+    }
+  }
+
   .mobile-menu-toggler {
     font-size: 2.5rem;
   }
-  .logo {
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
-    display: flex;
-    align-items: center;
-  }
+
   .menu {
-    > li {
-      > a {
-        padding-left: 2.6rem;
-        padding-top: 1.85rem;
-        padding-bottom: 1.85rem;
-        &::before {
-          content: "";
-          display: block;
-          position: absolute;
-          left: 2rem;
-          right: -1rem;
-          bottom: 1.3rem;
-          height: 0.1rem;
-          //   background-color: $background-color_1;
-          transform-origin: right center;
-          transform: scale(0, 1);
-          transition: transform 0.3s ease;
-        }
+    > li > a {
+      padding-top: 2.85rem;
+      padding-bottom: 2.85rem;
+      padding-left: 2.6rem;
+      position: relative;
+
+      &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        left: 2rem;
+        right: -1rem;
+        bottom: 1.3rem;
+        height: 0.1rem;
+        transform-origin: right center;
+        transform: scale(0, 1);
+        transition: transform 0.3s ease;
       }
-      &:hover {
-        > a {
-          //   color: $color_1;
-          &::before {
-            transform-origin: left center;
-            transform: scale(1, 1);
-          }
-        }
-      }
-      &:focus {
-        > a {
-          //   color: $color_1;
-          &::before {
-            transform-origin: left center;
-            transform: scale(1, 1);
-          }
-        }
-      }
-    }
-    li {
-      &:hover {
-        > a {
-          //   color: $color_1;
-          &::before {
-            transform-origin: left center;
-            transform: scale(1, 1);
-          }
-        }
-      }
-    }
-    li.show {
-      > a {
-        // color: $color_1;
-        &::before {
-          transform-origin: left center;
-          transform: scale(1, 1);
-        }
-      }
-    }
-    li.active {
-      > a {
-        // color: $color_1;
-        &::before {
-          transform-origin: left center;
-          transform: scale(1, 1);
-        }
+
+      &:hover::before,
+      &:focus::before,
+      li.show > a::before,
+      li.active > a::before {
+        transform-origin: left center;
+        transform: scale(1, 1);
       }
     }
   }
-  .header-middle {
-    .menu.sf-arrows {
-      > li {
-        > .sf-with-ul {
-          padding-right: 2rem;
-        }
-      }
-    }
-  }
-  .main-nav {
-    margin-left: 0;
-    margin-right: 10rem;
-  }
-  .wishlist-link {
-    font-size: 2.8rem;
-    .wishlist-count {
-      min-width: 1.7rem;
-      height: 1.7rem;
-      margin-bottom: 1.5rem;
-      margin-left: -1.2rem;
-    }
-  }
-  .cart-dropdown {
-    .cart-count {
-      min-width: 1.7rem;
-      height: 1.7rem;
-      margin-bottom: 1.5rem;
-      margin-left: -1.2rem;
-    }
-    &:not(:hover) {
-      &:not(.show) {
-        .dropdown-toggle {
-          //   color: $color_1;
-        }
-      }
-    }
-    &:hover {
-      //   color: $color_2;
-      .cart-txt {
-        // color: $color_2;
-      }
-    }
-    &:focus {
-      //   color: $color_2;
-      .cart-txt {
-        // color: $color_2;
-      }
-    }
-  }
+
+  .wishlist-link,
+  .cart-dropdown,
   .compare-dropdown {
-    &:not(:hover) {
-      &:not(.show) {
-        .dropdown-toggle {
-          //   color: $color_1;
-        }
-      }
+    padding-left: 2.3rem;
+
+    @media screen and (max-width: 575px) {
+      padding-left: 1.4rem;
     }
   }
-  .wishlist-txt {
-    font-size: 1.3rem;
-    font-weight: 400;
-    letter-spacing: 0;
-    // color: $color_1;
-    margin-left: 1rem;
-    margin-top: -0.5rem;
-    transition: all 0.3s;
+
+  .wishlist-link,
+  .cart-dropdown .cart-count,
+  .compare-dropdown {
+    font-size: 2.8rem;
+
+    @media screen and (max-width: 575px) {
+      font-size: 1.8rem;
+    }
   }
+
+  .wishlist-link .wishlist-count,
+  .cart-dropdown .cart-count {
+    min-width: 1.7rem;
+    height: 1.7rem;
+    margin-bottom: 1.5rem;
+    margin-left: -1.2rem;
+  }
+
+  .wishlist-txt,
   .cart-txt {
     font-size: 1.3rem;
     font-weight: 400;
     letter-spacing: 0;
-    // color: $color_1;
     margin-left: 1rem;
     margin-top: -0.5rem;
     transition: all 0.3s;
-  }
-}
-
-@media screen and (max-width: 575px) {
-  .header-9 {
-    .cart-dropdown {
-      padding-left: 1.4rem;
-    }
-    .compare-dropdown {
-      padding-left: 1.4rem;
-    }
-    .wishlist-link {
-      margin-left: 1.4rem;
-    }
   }
 }
