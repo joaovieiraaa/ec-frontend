@@ -5,6 +5,24 @@
   top: 0;
   z-index: 1040;
 
+  .megamenu {
+    .demo-item {
+      text-align: left;
+      h4 {
+        font-size: 1.6rem;
+      }
+
+      ul {
+        li {
+          a {
+            color: #212121;
+            font-size: 1.4rem;
+          }
+        }
+      }
+    }
+  }
+
   .header-middle {
     border-bottom: none;
   }

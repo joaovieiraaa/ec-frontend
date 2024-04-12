@@ -31,75 +31,13 @@
               <div class="megamenu demo">
                 <div class="menu-col">
                   <div class="demo-list">
-                    <div class="demo-item">
-                      <h4>Category 01</h4>
+                    <div class="demo-item" v-for="item in objRendered">
+                      <h4>{{ item.name }}</h4>
 
-                      <ul>
-                        <li>Lorem ipsum</li>
-                        <li>Lorem ipsum</li>
-                        <li>Lorem ipsum</li>
-                        <li>Lorem ipsum</li>
-                        <li>Lorem ipsum</li>
-                      </ul>
-                    </div>
-
-                    <div class="demo-item">
-                      <h4>Category 01</h4>
-
-                      <ul>
-                        <li>Lorem ipsum</li>
-                        <li>Lorem ipsum</li>
-                        <li>Lorem ipsum</li>
-                        <li>Lorem ipsum</li>
-                        <li>Lorem ipsum</li>
-                      </ul>
-                    </div>
-
-                    <div class="demo-item">
-                      <h4>Category 01</h4>
-
-                      <ul>
-                        <li>Lorem ipsum</li>
-                        <li>Lorem ipsum</li>
-                        <li>Lorem ipsum</li>
-                        <li>Lorem ipsum</li>
-                        <li>Lorem ipsum</li>
-                      </ul>
-                    </div>
-
-                    <div class="demo-item">
-                      <h4>Category 01</h4>
-
-                      <ul>
-                        <li>Lorem ipsum</li>
-                        <li>Lorem ipsum</li>
-                        <li>Lorem ipsum</li>
-                        <li>Lorem ipsum</li>
-                        <li>Lorem ipsum</li>
-                      </ul>
-                    </div>
-
-                    <div class="demo-item">
-                      <h4>Category 01</h4>
-
-                      <ul>
-                        <li>Lorem ipsum</li>
-                        <li>Lorem ipsum</li>
-                        <li>Lorem ipsum</li>
-                        <li>Lorem ipsum</li>
-                        <li>Lorem ipsum</li>
-                      </ul>
-                    </div>
-
-                    <div class="demo-item">
-                      <h4>Category 01</h4>
-
-                      <ul>
-                        <li>Lorem ipsum</li>
-                        <li>Lorem ipsum</li>
-                        <li>Lorem ipsum</li>
-                        <li>Lorem ipsum</li>
-                        <li>Lorem ipsum</li>
+                      <ul v-if="item.subcategories.length">
+                        <li v-for="category in item.subcategories">
+                          <a href="">{{ category.name[locale] }}</a>
+                        </li>
                       </ul>
                     </div>
                   </div>
