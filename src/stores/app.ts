@@ -5,6 +5,7 @@ export const appStore = defineStore({
   state: (): any => ({
     init: false,
     router: null,
+    locale: "en",
     layouts: [],
     theme: "layout-one",
     storeName: "store-one",

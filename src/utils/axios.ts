@@ -1,9 +1,21 @@
-export function generateReponse(event: any) {
+export interface IResponse {
+  data: { [key: string]: any };
+  errors: string[][];
+  hasErrors: boolean;
+  status: number;
+}
+
+export function generateResponse(event: any) {
+  const responseData = event.data ?? event.request.response ?? null;
+  const errorMessages = event.data?.errors?.message ?? event.code ?? null;
+  const hasErrors =
+    !!event.data?.errors || event.status > 204 || event.request.status === 0;
+  const status = event.status ?? event.code ?? null;
+
   return {
-    data: event.data || null,
-    errors: event.data?.errors || { message: [event.data?.message] } || [],
-    hasErrors:
-      (event.data?.errors ? true : false) || event.status > 204 || false,
-    status: event.status,
+    data: responseData,
+    errors: Array.isArray(errorMessages) ? errorMessages : [errorMessages],
+    hasErrors: hasErrors,
+    status: status,
   };
 }

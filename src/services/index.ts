@@ -6,12 +6,9 @@ const baseURL = import.meta.env.API_BASE_URL || "http://localhost:3000/v1";
 const ApiLogic: AxiosInstance = axios.create({
   baseURL,
   headers: {
-    "X-Locale": "en",
+    "x-locale": "en",
+    "x-identifier": hostname,
     "Content-Type": "application/json",
-    identifier:
-      hostname === "localhost" || hostname === "10.0.0.137"
-        ? "express-api-dev.jimpisoft.pt"
-        : hostname,
   },
 });
 

@@ -5,20 +5,27 @@
 import { onBeforeMount, onMounted, ref } from "vue";
 import { init, mobileMenu } from "./navbar-one";
 import { getAll } from "@/services/categories/categories.services";
-import { localizeObject } from "@/utils/helpers";
+import { localizeObj } from "@/utils/helpers";
+import { storeToRefs } from "pinia";
+import { appStore } from "@/stores/app";
+
+const { locale } = storeToRefs(appStore());
 
 const objRendered = ref<any[]>([]);
 
 onBeforeMount(async () => {
-  const response = await getAll();
-  if (!response.hasErrors)
-    objRendered.value = localizeObject(response.data, "en");
-
-  console.log(objRendered.value);
+  await get();
 });
 
 onMounted(() => {
   init();
   mobileMenu();
 });
+
+async function get() {
+  const response = await getAll();
+  if (!response.hasErrors) {
+    objRendered.value = localizeObj(response.data, locale.value);
+  }
+}
 </script>

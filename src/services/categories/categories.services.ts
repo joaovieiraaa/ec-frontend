@@ -1,8 +1,8 @@
 import ApiLogic from "@/services/index";
-import { generateReponse } from "@/utils/axios";
+import { generateResponse, type IResponse } from "@/utils/axios";
 
-export async function getAll() {
-  let response: any;
+export async function getAll(): Promise<IResponse> {
+  let response: IResponse;
 
   try {
     response = await ApiLogic.get(`categories`);
@@ -10,5 +10,5 @@ export async function getAll() {
     response = error;
   }
 
-  return generateReponse(response);
+  return generateResponse(response);
 }

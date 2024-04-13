@@ -3,6 +3,7 @@ import { createRouter, createWebHistory, useRouter } from "vue-router";
 // STORE
 import { storeToRefs } from "pinia";
 import { appStore } from "@/stores/app";
+import i18n from "@/i18n/i18n";
 
 // UTILS
 // import { cloneObject } from '@/utils/object';
@@ -26,35 +27,16 @@ const safeRoutes = routes
   .filter((x: any) => x.meta.safe)
   .map((x: any) => x.name);
 
+const locale = i18n.global.locale;
+
 router.beforeEach(async (to: any) => {
   const store = appStore();
-  const { routeView } = storeToRefs(store);
+  const { routeView, locale } = storeToRefs(store);
 
   routeView.value = to.meta.view ?? "index";
-
-  // if (!init.value) store.layouts();
-
-  // const { configs, reservation, router } = storeToRefs(appStore());
-  // if (!router.value) router.value = useRouter();
-  // if (safeRoutes.includes(to.name) && !reservation.value.reservation) await router.value.push('/');
-  // else {
-  //   await initData();
-  //   await initXolvis(to.name);
-  // }
-  // document.title = `Express Checkout - ${configs.value.firmName}`;
+  locale.value = i18n.global.locale ?? "en";
 });
 
-async function initData(): Promise<void> {
-  // const { fields, fieldsAdditional, flow, objFields, objLoaded, arrTermsAndConditions } =
-  //   storeToRefs(appStore());
-  // if (!objLoaded.value.configs) await ConfigsLogic.configs();
-  // if (!objLoaded.value.countries) await ConfigsLogic.countries();
-  // if (!objLoaded.value.documentType) await ConfigsLogic.documentTypes();
-  // if (!objLoaded.value.fields) await ConfigsLogic.fields();
-  // if (!arrTermsAndConditions.value.length) await RGDPLogic.get();
-  // // FIELDS
-  // if (flow.value !== 'additionalDriver') objFields.value = cloneObject(fields.value);
-  // else objFields.value = cloneObject(fieldsAdditional.value);
-}
+async function initData(): Promise<void> {}
 
 export default router;
