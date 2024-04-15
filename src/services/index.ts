@@ -1,3 +1,4 @@
+import { generateToken } from "@/utils/session";
 import axios, { type AxiosInstance } from "axios";
 
 const hostname = window.location.hostname;
@@ -8,6 +9,7 @@ const ApiLogic: AxiosInstance = axios.create({
   headers: {
     "x-locale": "en",
     "x-identifier": hostname,
+    _: localStorage.getItem("_token") ?? generateToken(),
     "Content-Type": "application/json",
   },
 });

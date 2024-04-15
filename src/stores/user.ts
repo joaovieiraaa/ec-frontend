@@ -9,7 +9,8 @@ export const userStore = defineStore({
   getters: {},
   actions: {
     async get() {
-      this.user = await session();
+      const response = await session();
+      if (!response.hasErrors) this.user = response.data;
     },
   },
 });

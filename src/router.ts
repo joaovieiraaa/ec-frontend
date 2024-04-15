@@ -8,6 +8,7 @@ import { userStore } from "@/stores/user";
 // I18N
 import i18n from "@/i18n/i18n";
 import { randomString } from "./utils/helpers";
+import { generateToken } from "./utils/session";
 
 // UTILS
 // import { cloneObject } from '@/utils/object';
@@ -33,24 +34,12 @@ const safeRoutes = routes
 
 router.beforeEach(async (to: any) => {
   const { routeView, locale } = storeToRefs(appStore());
-  const { user } = storeToRefs(userStore());
 
+  generateToken();
   routeView.value = to.meta.view ?? "index";
   locale.value = i18n.global.locale ?? "en";
 
-  user.value = initData();
-
-  console.log(localStorage);
+  await userStore().get();
 });
-
-async function initData() {
-  const session = localStorage;
-
-  if (!session._token) session.setItem("_token", randomString(32));
-
-  userStore().get();
-
-  return session;
-}
 
 export default router;
