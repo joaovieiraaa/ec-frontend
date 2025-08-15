@@ -34,8 +34,8 @@
                     <div class="demo-item" v-for="item in objRendered">
                       <h4>{{ item.name }}</h4>
 
-                      <ul v-if="item.subcategories.length">
-                        <li v-for="category in item.subcategories">
+                      <ul v-if="item.relateds.length">
+                        <li v-for="category in item.relateds">
                           <a href="">{{ category.name }}</a>
                         </li>
                       </ul>

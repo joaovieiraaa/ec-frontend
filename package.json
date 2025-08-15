@@ -13,25 +13,23 @@
     "preview": "vite preview --port"
   },
   "dependencies": {
-    "@intlify/unplugin-vue-i18n": "^4.0.0",
-    "@vitejs/plugin-vue": "^5.0.4",
-    "axios": "^1.6.8",
-    "core-js": "^3.36.1",
-    "pinia": "^2.1.7",
-    "vue": "^3.4.21",
-    "vue-i18n": "^9.11.1",
-    "vue-router": "^4.3.0"
+    "@intlify/unplugin-vue-i18n": "^6.0.8",
+    "@vitejs/plugin-vue": "^6.0.1",
+    "axios": "^1.11.0",
+    "core-js": "^3.45.0",
+    "pinia": "^3.0.3",
+    "vue": "^3.5.18",
+    "vue-i18n": "^11.1.11",
+    "vue-router": "^4.5.1"
   },
   "devDependencies": {
-    "@vue/cli-plugin-eslint": "^5.0.8",
-    "@vue/cli-service": "^5.0.8",
-    "eslint": "^9.0.0",
-    "eslint-plugin-vue": "^9.24.1",
-    "sass": "^1.74.1",
-    "swiper": "^11.1.1",
-    "terser": "^5.30.3",
-    "typescript": "^5.4.5",
-    "vite": "^5.2.8"
+    "eslint": "^9.33.0",
+    "eslint-plugin-vue": "^10.4.0",
+    "sass": "^1.90.0",
+    "swiper": "^11.2.10",
+    "terser": "^5.43.1",
+    "typescript": "^5.9.2",
+    "vite": "^7.1.2"
   },
   "browserslist": [
     "> 1%",

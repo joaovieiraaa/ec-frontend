@@ -10,35 +10,18 @@ export function randomString(length = 8) {
   return randomString;
 }
 
-export function localizeObj(obj: any, locale: string) {
-  const localizedProps = ["name", "description", "slug"];
+export function cloneObject(obj: any) {
+  if (obj === null || typeof obj !== "object") return obj;
 
-  function localizeProperty(prop: string | number | symbol) {
-    if (localizedProps.includes(prop as string)) {
-      if (typeof obj[prop] === "object") {
-        obj[prop] = obj[prop][locale];
-      }
-    }
+  if (Array.isArray(obj)) {
+    return obj.map(cloneObject);
   }
 
-  function processObject(obj: any) {
-    for (let prop in obj) {
-      if (obj.hasOwnProperty(prop)) {
-        if (Array.isArray(obj[prop])) {
-          obj[prop].forEach((item: any) => {
-            if (typeof item === "object") {
-              localizeObj(item, locale);
-            }
-          });
-        } else if (typeof obj[prop] === "object") {
-          localizeObj(obj[prop], locale);
-        }
-        localizeProperty(prop);
-      }
+  const cloned = {};
+  for (const key in obj) {
+    if (obj.hasOwnProperty(key)) {
+      cloned[key] = cloneObject(obj[key]);
     }
   }
-
-  processObject(obj);
-
-  return obj;
+  return cloned;
 }

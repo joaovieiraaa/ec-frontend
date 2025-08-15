@@ -1,12 +1,11 @@
 import { defineStore } from "pinia";
 
-export const appStore = defineStore({
-  id: "app",
-  state: (): any => ({
+export const appStore = defineStore("app", {
+  state: () => ({
     init: false,
-    router: null,
+    router: null as any,
     locale: "en",
-    layouts: [],
+    layouts: [] as any[],
     theme: "layout-one",
     storeName: "store-one",
     routeView: "index",

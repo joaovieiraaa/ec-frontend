@@ -5,9 +5,9 @@
 import { onBeforeMount, onMounted, ref } from "vue";
 import { init, mobileMenu } from "./navbar-one";
 import { getAll } from "@/services/categories/categories.services";
-import { localizeObj } from "@/utils/helpers";
 import { storeToRefs } from "pinia";
 import { appStore } from "@/stores/app";
+import { cloneObject } from "@/utils/helpers";
 
 const { locale } = storeToRefs(appStore());
 
@@ -23,9 +23,10 @@ onMounted(() => {
 });
 
 async function get() {
-  const response = await getAll();
+  const response = await getAll({ images: false });
+
   if (!response.hasErrors) {
-    objRendered.value = localizeObj(response.data, locale.value);
+    objRendered.value = cloneObject(response.data);
   }
 }
 </script>
